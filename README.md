@@ -5,7 +5,7 @@ The project "react-smooth-hash-link" is a very simple but essential program for 
 
 
 
-Example
+      Example
 import React from 'react'
 import { HashLink } from 'react-smooth-hash-link'
 

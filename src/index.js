@@ -23,7 +23,8 @@ export class HashLink extends Component {
     render() {
         return (
             <div
-                onClick={() => { this.navigateTo(this.props.path) }}
+                onClick={() => { this.navigateTo(this.props.to) }}
+                style={{cursor:'pointer'}}
                 className={this.props.class}
             >
                 {this.props.menu}

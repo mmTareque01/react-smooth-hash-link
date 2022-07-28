@@ -5,57 +5,7 @@ The project "react-smooth-hash-link" is a very simple but essential program for 
 
 
 
-## Basics
-
-```shell
-npm i react-smooth-hash-link
-```
-
-`react` is a peer dependency.
-
-
-### `<HashLink>`
-
-```js
-import { HashLink } from 'react-smooth-hash-link'
-
-...
-
-// use it just like a RRv6 <Link>
-// the 'to' props accept only hash link (#anything or /#anything)
-// the 'menu' props accept string or a set of tags. To learn more follow the documentation
-
-
-<HashLink to="/some/path#with-hash-fragment" menu={'Demo'}/>
-
-
-```
-
----
-
-
-## Scrolling API
-
-### `stopSmooth`
-
-- By default it uses smooth scrooling. But if you don't want to use smooth scrooling then use 'stopSmooth'
-- Smooth scroll to the element
-- React Router Hash Link uses the native Element method `element.scrollIntoView()` for scrolling, and when the `smooth` prop is present it will call it with the smooth option, `element.scrollIntoView({ behavior: 'smooth' })`
-- Note that not all browsers have implemented options for `scrollIntoView` - see [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView) and [Can I Use](https://caniuse.com/#feat=scrollintoview) - there is also a browser [polyfill for smooth scrolling](https://github.com/iamdustan/smoothscroll) which you can install separately so `smooth` will work in all browsers
-
-```js
-import { HashLink } from 'react-smooth-hash-link'
-
-...
-
-<HashLink to="/some/path#with-hash-fragment" stopSmooth menu={'Demo'}/>
-```
-
----
-
-## `Example`
-
-### `Navigation.js`
+Example
 import React from 'react'
 import { HashLink } from 'react-smooth-hash-link'
 
@@ -63,13 +13,9 @@ export default function Testing() {
   return (
     <>
       <HashLink
-        path="/#demo"
+        to="/#demo"
         menu = {"Demo"}
       />
     </>
   )
 }
-
-
-### `Component.js`
-

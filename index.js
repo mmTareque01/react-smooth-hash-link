@@ -89,7 +89,10 @@ var HashLink = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/_react["default"].createElement("div", {
         onClick: function onClick() {
-          _this2.navigateTo(_this2.props.path);
+          _this2.navigateTo(_this2.props.to);
+        },
+        style: {
+          cursor: 'pointer'
         },
         className: this.props["class"]
       }, this.props.menu);

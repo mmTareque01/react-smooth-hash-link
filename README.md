@@ -5,6 +5,15 @@ The project "react-smooth-hash-link" is a very simple but essential program for 
 
 
 
+## Basics
+
+```shell
+npm i react-smooth-hash-link
+```
+
+`react` is a peer dependency.
+
+
       Example
 import React from 'react'
 import { HashLink } from 'react-smooth-hash-link'

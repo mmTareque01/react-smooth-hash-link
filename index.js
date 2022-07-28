@@ -5,7 +5,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.HashLink = void 0;
 
 var _history = require("history");
 
@@ -99,4 +99,4 @@ var HashLink = /*#__PURE__*/function (_Component) {
   return HashLink;
 }(_react.Component);
 
-exports["default"] = HashLink;
+exports.HashLink = HashLink;

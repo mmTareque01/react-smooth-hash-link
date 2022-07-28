@@ -3,7 +3,11 @@
     **********{ react-smooth-hash-link }**********
 The project "react-smooth-hash-link" is a very simple but essential program for every developer. This project will make it easier for developers to create hash links in React projects. There are other projects that do the same task, but they have some issues like some of them don't work in the mobile version, some of them can not generate shareable links using hash, which is a big problem. This project has solved all of these problems. Now let's enjoy the program. Happy Coding.....
 
+[![npm]](https://www.npmjs.com/package/react-smooth-hash-link)
 
+This is a solution to [React Router's issue of not scrolling to `#hash-fragments`](https://github.com/reactjs/react-router/issues/394#issuecomment-220221604) when using the `<Link>` component to navigate.
+
+When you click on a link created with `react-smooth-hash-link` it will scroll to the element on the page with the `id` that matches the `#hash-fragment` in the link. This will also work for elements that are created after an asynchronous data load.
 
 ## Basics
 

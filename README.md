@@ -55,20 +55,7 @@ import { HashLink } from 'react-smooth-hash-link'
 
 ## `Example`
 
-### `Navigation.js`
-import React from 'react'
-import { HashLink } from 'react-smooth-hash-link'
-
-export default function Testing() {
-  return (
-    <>
-      <HashLink
-        path="/#demo"
-        menu = {"Demo"}
-      />
-    </>
-  )
-}
+visit the link https://codesandbox.io/s/eager-buck-w5zkpk
 
 
 ### `Component.js`

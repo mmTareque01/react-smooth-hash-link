@@ -1,0 +1,34 @@
+{
+  "name": "react-smooth-hash-link",
+  "version": "1.3.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmTareque01/react-smooth-hash-link.git"
+  },
+  "keywords": [
+    "\"hash",
+    "router\"",
+    "\"hash",
+    "link\"",
+    "\"react",
+    "hash",
+    "router\""
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mmTareque01/react-smooth-hash-link/issues"
+  },
+  "homepage": "https://github.com/mmTareque01/react-smooth-hash-link#readme",
+  "dependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6"
+  }
+}

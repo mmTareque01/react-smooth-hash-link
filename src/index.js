@@ -1,34 +1,44 @@
-import { createBrowserHistory } from 'history';
 import React, { Component } from 'react'
+import { useNavigation } from './useNavigation'
 
-export class HashLink extends Component {
-    customHistory = createBrowserHistory()
-
-    navigateTo(path) {
-        this.customHistory.push(path)
+class HashLinks extends Component {
+    scrollingEffect() {
         if (window.location.hash) {
             let element = document.getElementById((window.location.hash).replace('#', ''));
             if (element) element.scrollIntoView({ block: 'start', behavior: this.props.stopSmooth ? 'auto' : 'smooth' });
         }
     }
-
+    hashNavigation(path) {
+        this.props.navigateTo(path)
+        this.scrollingEffect()
+    }
     componentDidMount() {
-        if (window.location.hash) {
-            let element = document.getElementById((window.location.hash).replace('#', ''));
-            if (element) element.scrollIntoView({ block: 'start', behavior: this.props.stopSmooth ? 'auto' : 'smooth' });
-        }
-
+        this.scrollingEffect()
+    }
+    componentDidUpdate() {
+        this.scrollingEffect()
     }
 
     render() {
         return (
             <div
-                onClick={() => { this.navigateTo(this.props.to) }}
-                style={{cursor:'pointer'}}
-                className={this.props.class}
+                onClick={() => { this.hashNavigation(this.props.to) }}
+                style={{ cursor: 'pointer' }}
+                className={this.props.className}
             >
                 {this.props.menu}
             </div>
         )
     }
+}
+
+export function HashLink({to, menu, stopSmooth=false, className}) {
+    let navigateObj = useNavigation();
+    return (<HashLinks
+        to={to}
+        menu={menu}
+        stopSmooth={stopSmooth}
+        className={className}
+        navigateTo={navigateObj}
+    />)
 }

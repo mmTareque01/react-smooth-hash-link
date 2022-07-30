@@ -5,11 +5,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.HashLink = void 0;
-
-var _history = require("history");
+exports.HashLink = HashLink;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _useNavigation = require("./useNavigation");
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -35,34 +35,20 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var HashLinks = /*#__PURE__*/function (_Component) {
+  _inherits(HashLinks, _Component);
 
-var HashLink = /*#__PURE__*/function (_Component) {
-  _inherits(HashLink, _Component);
+  var _super = _createSuper(HashLinks);
 
-  var _super = _createSuper(HashLink);
+  function HashLinks() {
+    _classCallCheck(this, HashLinks);
 
-  function HashLink() {
-    var _this;
-
-    _classCallCheck(this, HashLink);
-
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-
-    _this = _super.call.apply(_super, [this].concat(args));
-
-    _defineProperty(_assertThisInitialized(_this), "customHistory", (0, _history.createBrowserHistory)());
-
-    return _this;
+    return _super.apply(this, arguments);
   }
 
-  _createClass(HashLink, [{
-    key: "navigateTo",
-    value: function navigateTo(path) {
-      this.customHistory.push(path);
-
+  _createClass(HashLinks, [{
+    key: "scrollingEffect",
+    value: function scrollingEffect() {
       if (window.location.hash) {
         var element = document.getElementById(window.location.hash.replace('#', ''));
         if (element) element.scrollIntoView({
@@ -70,36 +56,67 @@ var HashLink = /*#__PURE__*/function (_Component) {
           behavior: this.props.stopSmooth ? 'auto' : 'smooth'
         });
       }
+    }
+  }, {
+    key: "hashNavigation",
+    value: function hashNavigation(path) {
+      this.props.navigateTo(path);
+      this.scrollingEffect();
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      if (window.location.hash) {
-        var element = document.getElementById(window.location.hash.replace('#', ''));
-        if (element) element.scrollIntoView({
-          block: 'start',
-          behavior: this.props.stopSmooth ? 'auto' : 'smooth'
-        });
-      }
+      this.scrollingEffect();
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      this.scrollingEffect();
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       return /*#__PURE__*/_react["default"].createElement("div", {
         onClick: function onClick() {
-          _this2.navigateTo(_this2.props.to);
+          _this.hashNavigation(_this.props.to);
         },
         style: {
           cursor: 'pointer'
         },
-        className: this.props["class"]
+        className: this.props.className
       }, this.props.menu);
     }
   }]);
 
-  return HashLink;
+  return HashLinks;
 }(_react.Component);
 
-exports.HashLink = HashLink;
+function HashLink(_ref) {
+  var to = _ref.to,
+      menu = _ref.menu,
+      _ref$stopSmooth = _ref.stopSmooth,
+      stopSmooth = _ref$stopSmooth === void 0 ? false : _ref$stopSmooth,
+      className = _ref.className;
+  var navigateObj = (0, _useNavigation.useNavigation)();
+  return /*#__PURE__*/_react["default"].createElement(HashLinks, {
+    to: to,
+    menu: menu,
+    stopSmooth: stopSmooth,
+    className: className,
+    navigateTo: navigateObj
+  });
+}
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.useNavigation = useNavigation;
+
+var _reactRouterDom = require("react-router-dom");
+
+function useNavigation() {
+  return (0, _reactRouterDom.useNavigate)();
+}

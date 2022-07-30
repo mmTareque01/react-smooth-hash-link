@@ -57,10 +57,23 @@ import { HashLink } from 'react-smooth-hash-link'
 
 ---
 
+## Style
+### `className`
+- Like other component, you also can change it's style using `className` attribute. You can add any css class here.
+
+
+
 ## `Example`
 
 visit the link https://codesandbox.io/s/eager-buck-w5zkpk
 
+## `Contact or Help`
+- If you need any help, you can contact me through facebook. Steps are written bellow.
 
-### `Component.js`
+Steps: 
+=> go to [facebook](https://www.facebook.com/MuhimenulTareque)
+=> click on 'Book Now'
+=> Select the time slot
+=> Then I will knock you. Thank you
+
 

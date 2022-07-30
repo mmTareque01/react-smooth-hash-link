@@ -70,10 +70,10 @@ visit the link https://codesandbox.io/s/eager-buck-w5zkpk
 ## `Contact or Help`
 - If you need any help, you can contact me through facebook. Steps are written bellow.
 
-Steps: 
-=> go to [facebook](https://www.facebook.com/MuhimenulTareque)
-=> click on 'Book Now'
-=> Select the time slot
-=> Then I will knock you. Thank you
+### Steps: 
+- go to [facebook](https://www.facebook.com/MuhimenulTareque)
+- click on 'Book Now'
+- Select the time slot
+- Then I will knock you. Thank you
 
 
